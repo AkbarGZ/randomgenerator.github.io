@@ -4,7 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Number Generator</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6e7fdb, #88c9f3);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .number-display {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            color: #f0f0f0;
+        }
+
+        button {
+            background-color: #ff6f61;
+            color: white;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #d45542;
+        }
+
+        .description {
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -13,6 +75,15 @@
         <button onclick="generateNumber()">Generate Number</button>
         <p class="description">Klik tombol untuk mendapatkan angka acak!</p>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        function generateNumber() {
+            // Generate a random number between 1 and 100
+            const randomNum = Math.floor(Math.random() * 100) + 1;
+            
+            // Display the random number on the page
+            document.getElementById('number-display').textContent = randomNum;
+        }
+    </script>
 </body>
 </html>
